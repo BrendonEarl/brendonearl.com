@@ -22,7 +22,7 @@ const jobs: Job[] = [
   {
     title: 'Software Tester',
     company: 'iFit',
-    description: 'Quality assurance and testing for fitness technology applications.',
+    description: 'Manual testing for fitness technology applications.',
     color: 'pink',
     icon: 'fas fa-vial',
   },
@@ -35,7 +35,6 @@ const jobs: Job[] = [
   {
     title: 'Crew Member',
     company: 'Outback Firefighting',
-    description: 'Wildfire suppression and emergency response.',
     color: 'red',
     icon: 'fas fa-fire',
   },
@@ -75,7 +74,7 @@ const colorMap: Record<string, { bg: string; border: string; text: string }> = {
         Work History
       </h2>
       <p class="mt-4 text-surface-400 max-w-2xl mx-auto">
-        From firefighting to full-stack development—every role shaped my problem-solving mindset.
+        Every role shaped my problem-solving mindset.
       </p>
     </div>
 
@@ -89,7 +88,7 @@ const colorMap: Record<string, { bg: string; border: string; text: string }> = {
         {jobs.map((job, index) => {
           const colors = colorMap[job.color];
           return (
-            <div 
+            <div
               class={`relative pl-20 animate-on-scroll ${job.featured ? 'py-2' : ''}`}
               style={`animation-delay: ${index * 0.1}s;`}
             >
@@ -120,7 +119,7 @@ const colorMap: Record<string, { bg: string; border: string; text: string }> = {
                     </span>
                   )}
                 </div>
-                
+
                 {job.description && (
                   <p class="text-surface-400 mt-3">{job.description}</p>
                 )}

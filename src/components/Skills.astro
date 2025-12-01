@@ -12,36 +12,41 @@ interface SkillCategory {
   skills: Skill[];
 }
 
+const getYears = (startYear: number) => {
+  const years = new Date().getFullYear() - startYear;
+  return `${years}+ yrs`;
+};
+
 const skillCategories: SkillCategory[] = [
   {
     title: 'Backend',
     color: 'from-green-500 to-emerald-600',
     skills: [
-      { name: 'PHP', icon: 'fab fa-php', level: 'expert', years: '3+ yrs' },
-      { name: 'Laravel', icon: 'fab fa-laravel', level: 'expert', years: '3+ yrs' },
-      { name: 'Python', icon: 'fab fa-python', level: 'advanced', years: '7+ yrs' },
-      { name: 'Java', icon: 'fab fa-java', level: 'advanced', years: '6+ yrs' },
-      { name: 'MySQL', icon: 'fas fa-database', level: 'expert', years: '3+ yrs' },
-      { name: 'REST APIs', icon: 'fas fa-plug', level: 'expert', years: '3+ yrs' },
+      { name: 'PHP', icon: 'fab fa-php', level: 'expert', startYear: 2022 },
+      { name: 'Laravel', icon: 'fab fa-laravel', level: 'expert', startYear: 2022 },
+      { name: 'Python', icon: 'fab fa-python', level: 'advanced', startYear: 2018 },
+      { name: 'Java', icon: 'fab fa-java', level: 'advanced', startYear: 2019 },
+      { name: 'MySQL', icon: 'fas fa-database', level: 'expert', startYear: 2022 },
+      { name: 'REST APIs', icon: 'fas fa-plug', level: 'expert', startYear: 2022 },
     ]
   },
   {
     title: 'Frontend',
     color: 'from-blue-500 to-cyan-600',
     skills: [
-      { name: 'JavaScript', icon: 'fab fa-js', level: 'advanced', years: '6+ yrs' },
-      { name: 'HTML/CSS', icon: 'fab fa-html5', level: 'advanced', years: '6+ yrs' },
-      { name: 'Tailwind CSS', icon: 'fas fa-paint-brush', level: 'proficient', years: '2+ yrs' },
+      { name: 'JavaScript', icon: 'fab fa-js', level: 'advanced', startYear: 2019 },
+      { name: 'HTML/CSS', icon: 'fab fa-html5', level: 'advanced', startYear: 2019 },
+      { name: 'Tailwind CSS', icon: 'fas fa-paint-brush', level: 'proficient', startYear: 2022 },
     ]
   },
   {
     title: 'DevOps & Tools',
     color: 'from-orange-500 to-red-600',
     skills: [
-      { name: 'AWS EC2/S3', icon: 'fab fa-aws', level: 'expert', years: '3+ yrs' },
-      { name: 'Linux', icon: 'fab fa-linux', level: 'advanced', years: '4+ yrs' },
-      { name: 'Git', icon: 'fab fa-git-alt', level: 'advanced', years: '6+ yrs' },
-      { name: 'Vim', icon: 'fas fa-terminal', level: 'advanced', years: '4+ yrs' },
+      { name: 'AWS EC2/S3', icon: 'fab fa-aws', level: 'expert', startYear: 2022 },
+      { name: 'Linux', icon: 'fab fa-linux', level: 'advanced', startYear: 2021 },
+      { name: 'Git', icon: 'fab fa-git-alt', level: 'advanced', startYear: 2019 },
+      { name: 'Vim', icon: 'fas fa-terminal', level: 'advanced', startYear: 2021 },
     ]
   },
 ];
@@ -64,7 +69,7 @@ const levelColors = {
         Languages & Technologies
       </h2>
       <p class="mt-4 text-surface-400 max-w-2xl mx-auto">
-        A comprehensive toolkit built over years of professional development and personal projects.
+        A comprehensive toolkit built over years of education, professional development, and personal projects.
       </p>
     </div>
 
@@ -92,7 +97,7 @@ const levelColors = {
                     {skill.name}
                   </div>
                   <div class="text-xs text-surface-500 mt-1">
-                    {skill.years}
+                    {getYears(skill.startYear)}
                   </div>
                 </div>
 

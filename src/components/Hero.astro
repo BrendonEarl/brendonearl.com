@@ -6,9 +6,17 @@ const socialLinks = [
 ---
 
 <section id="hero" class="min-h-screen flex items-center justify-center relative overflow-hidden">
-  <!-- Gradient Background -->
-  <div class="absolute inset-0 bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900"></div>
-  
+  <!-- Background Image with Overlay - Add your image to public/images/hero-bg.jpg -->
+  <div class="absolute inset-0">
+    <!-- Uncomment this when you add your image -->
+    <img
+      src="/images/hero-bg.jpg"
+      alt=""
+      class="w-full h-full object-cover opacity-20"
+    />
+    <!--<div class="absolute inset-0 bg-gradient-to-br from-surface-900 via-surface-800 to-surface-900"></div>-->
+  </div>
+
   <!-- Animated Grid Pattern -->
   <div class="absolute inset-0 opacity-20">
     <div class="absolute inset-0" style="background-image: radial-gradient(circle at 1px 1px, rgb(34 197 94 / 0.3) 1px, transparent 0); background-size: 40px 40px;"></div>
@@ -20,10 +28,12 @@ const socialLinks = [
 
   <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <!-- Terminal-style intro -->
-    <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-surface-800/80 border border-surface-700 mb-8 animate-fade-in">
-      <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
-      <code class="text-sm font-mono text-primary-400">~/brendon-earl</code>
-      <span class="text-surface-400 font-mono text-sm">$ whoami</span>
+    <div class="flex justify-center mb-8 animate-fade-in">
+      <div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-surface-800/80 border border-surface-700">
+        <span class="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
+        <code class="text-sm font-mono text-primary-400">~/brendon-earl</code>
+        <span class="text-surface-400 font-mono text-sm">$ whoami</span>
+      </div>
     </div>
 
     <!-- Main Heading -->
@@ -34,45 +44,49 @@ const socialLinks = [
 
     <!-- Subtitle -->
     <p class="text-xl sm:text-2xl text-surface-300 mb-8 max-w-2xl mx-auto animate-fade-in" style="animation-delay: 0.2s;">
-      Full-Stack Software Engineer building robust web applications with 
-      <span class="text-primary-400 font-medium">PHP</span>, 
-      <span class="text-primary-400 font-medium">Laravel</span>, and 
+      Full-Stack Software Engineer building robust web applications with
+      <span class="text-primary-400 font-medium">PHP</span>,
+      <span class="text-primary-400 font-medium">Laravel</span>, and
       <span class="text-primary-400 font-medium">AWS</span>
     </p>
 
-    <!-- CTA Buttons -->
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-in" style="animation-delay: 0.3s;">
-      <a 
-        href="#contact" 
-        class="w-full sm:w-auto px-8 py-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-semibold transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary-500/25"
-      >
-        Get in Touch
-      </a>
-      <a 
-        href="#experience" 
-        class="w-full sm:w-auto px-8 py-4 rounded-xl border border-surface-600 hover:border-primary-500 text-surface-200 hover:text-white font-semibold transition-all hover:bg-surface-800"
-      >
-        View My Work
-      </a>
-    </div>
-
-    <!-- Social Links -->
-    <div class="flex items-center justify-center space-x-4 animate-fade-in" style="animation-delay: 0.4s;">
-      {socialLinks.map(link => (
-        <a 
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="w-12 h-12 rounded-xl bg-surface-800 border border-surface-700 hover:border-primary-500 flex items-center justify-center text-surface-400 hover:text-primary-400 transition-all hover:scale-110"
-          aria-label={link.label}
+    <!-- CTA Buttons - centered with flex -->
+    <div class="flex justify-center mb-12 animate-fade-in" style="animation-delay: 0.3s;">
+      <div class="flex flex-col sm:flex-row items-center gap-4">
+        <a
+            href="#contact"
+            class="w-full sm:w-auto px-8 py-4 rounded-xl bg-primary-600 hover:bg-primary-500 text-white font-semibold transition-all hover:scale-105 hover:shadow-lg hover:shadow-primary-500/25"
         >
-          <i class={`${link.icon} text-xl`}></i>
+          Get in Touch
         </a>
-      ))}
+        <a
+            href="#experience"
+            class="w-full sm:w-auto px-8 py-4 rounded-xl border border-surface-600 hover:border-primary-500 text-surface-200 hover:text-white font-semibold transition-all hover:bg-surface-800"
+        >
+          View My Work
+        </a>
+      </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <!-- Social Links - centered with flex -->
+    <div class="flex justify-center mb-16 animate-fade-in" style="animation-delay: 0.4s;">
+      <div class="flex items-center space-x-4">
+        {socialLinks.map(link => (
+            <a
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-12 h-12 rounded-xl bg-surface-800 border border-surface-700 hover:border-primary-500 flex items-center justify-center text-surface-400 hover:text-primary-400 transition-all hover:scale-110"
+                aria-label={link.label}
+            >
+              <i class={`${link.icon} text-xl`}></i>
+            </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Scroll Indicator - positioned relative to content, centered -->
+    <div class="flex justify-center animate-bounce">
       <a href="#about" class="text-surface-500 hover:text-primary-400 transition-colors">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
