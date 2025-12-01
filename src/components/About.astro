@@ -1,0 +1,82 @@
+---
+const highlights = [
+  { icon: 'fas fa-code', label: '3+ Years', desc: 'Professional Dev' },
+  { icon: 'fas fa-server', label: 'Full-Stack', desc: 'PHP & Laravel' },
+  { icon: 'fas fa-cloud', label: 'AWS', desc: 'EC2 & S3' },
+];
+---
+
+<section id="about" class="py-24 relative">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="inline-block px-4 py-1 rounded-full bg-primary-500/10 text-primary-400 text-sm font-medium mb-4">
+        About Me
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-surface-100">
+        Building the Web, One Line at a Time
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-12 items-center">
+      <!-- Image/Visual Side -->
+      <div class="lg:col-span-2 animate-on-scroll">
+        <div class="relative">
+          <!-- Code Block Visual -->
+          <div class="bg-surface-800 rounded-2xl border border-surface-700 overflow-hidden shadow-2xl">
+            <div class="flex items-center space-x-2 px-4 py-3 bg-surface-700/50 border-b border-surface-700">
+              <div class="w-3 h-3 rounded-full bg-red-500"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500"></div>
+              <span class="ml-2 text-sm text-surface-400 font-mono">brendon.php</span>
+            </div>
+            <div class="p-6 font-mono text-sm leading-relaxed">
+              <div><span class="text-pink-400">&lt;?php</span></div>
+              <div class="mt-2"><span class="text-blue-400">class</span> <span class="text-yellow-300">Developer</span></div>
+              <div>{</div>
+              <div class="pl-4"><span class="text-blue-400">public</span> <span class="text-purple-400">$name</span> = <span class="text-green-400">'Brendon Earl'</span>;</div>
+              <div class="pl-4"><span class="text-blue-400">public</span> <span class="text-purple-400">$role</span> = <span class="text-green-400">'Full-Stack Engineer'</span>;</div>
+              <div class="pl-4"><span class="text-blue-400">public</span> <span class="text-purple-400">$passion</span> = <span class="text-green-400">'Clean Code'</span>;</div>
+              <div class="mt-2 pl-4">
+                <span class="text-blue-400">public function</span> <span class="text-yellow-300">build</span>(): <span class="text-green-400">string</span>
+              </div>
+              <div class="pl-4">{</div>
+              <div class="pl-8"><span class="text-pink-400">return</span> <span class="text-green-400">'Amazing Things'</span>;</div>
+              <div class="pl-4">}</div>
+              <div>}</div>
+            </div>
+          </div>
+          
+          <!-- Decorative Elements -->
+          <div class="absolute -z-10 -bottom-4 -right-4 w-full h-full rounded-2xl bg-gradient-to-br from-primary-500/20 to-primary-700/20"></div>
+        </div>
+      </div>
+
+      <!-- Content Side -->
+      <div class="lg:col-span-3 space-y-6 animate-on-scroll" style="animation-delay: 0.1s;">
+        <p class="text-lg text-surface-300 leading-relaxed">
+          I'm a full-stack software engineer with a passion for building clean, efficient, and scalable web applications. 
+          With experience across the entire development lifecycle, I specialize in <span class="text-primary-400 font-medium">PHP/Laravel</span> backends 
+          paired with modern frontend technologies.
+        </p>
+        
+        <p class="text-lg text-surface-300 leading-relaxed">
+          My journey has taken me from fighting wildfires with Outback Firefighting to debugging code—both require 
+          staying calm under pressure and solving complex problems on the fly. I bring that same grit and 
+          determination to every project I work on.
+        </p>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-3 gap-4 pt-6">
+          {highlights.map(item => (
+            <div class="text-center p-4 rounded-xl bg-surface-800/50 border border-surface-700/50 hover:border-primary-500/50 transition-colors">
+              <i class={`${item.icon} text-2xl text-primary-400 mb-2`}></i>
+              <div class="font-bold text-surface-100">{item.label}</div>
+              <div class="text-sm text-surface-400">{item.desc}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="py-8 border-t border-surface-800">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <!-- Logo -->
+      <div class="flex items-center space-x-2">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center font-bold text-sm text-white">
+          BE
+        </div>
+        <span class="text-surface-400 text-sm">
+          &copy; {currentYear} Brendon Earl
+        </span>
+      </div>
+
+      <!-- Built With -->
+      <div class="flex items-center space-x-2 text-sm text-surface-500">
+        <span>Built with</span>
+        <a href="https://astro.build" target="_blank" rel="noopener noreferrer" class="text-primary-400 hover:text-primary-300 transition-colors">
+          Astro
+        </a>
+        <span>&</span>
+        <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" class="text-primary-400 hover:text-primary-300 transition-colors">
+          Tailwind
+        </a>
+      </div>
+
+      <!-- Social Links -->
+      <div class="flex items-center space-x-3">
+        <a 
+          href="https://linkedin.com/in/brendon-earl" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-8 h-8 rounded-lg bg-surface-800 hover:bg-surface-700 flex items-center justify-center text-surface-400 hover:text-primary-400 transition-all"
+          aria-label="LinkedIn"
+        >
+          <i class="fab fa-linkedin text-sm"></i>
+        </a>
+        <a 
+          href="https://github.com/brendonearl" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="w-8 h-8 rounded-lg bg-surface-800 hover:bg-surface-700 flex items-center justify-center text-surface-400 hover:text-primary-400 transition-all"
+          aria-label="GitHub"
+        >
+          <i class="fab fa-github text-sm"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

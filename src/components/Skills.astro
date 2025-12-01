@@ -1,0 +1,126 @@
+---
+interface Skill {
+  name: string;
+  icon: string;
+  level: 'expert' | 'advanced' | 'proficient';
+  years: string;
+}
+
+interface SkillCategory {
+  title: string;
+  color: string;
+  skills: Skill[];
+}
+
+const skillCategories: SkillCategory[] = [
+  {
+    title: 'Backend',
+    color: 'from-green-500 to-emerald-600',
+    skills: [
+      { name: 'PHP', icon: 'fab fa-php', level: 'expert', years: '3+ yrs' },
+      { name: 'Laravel', icon: 'fab fa-laravel', level: 'expert', years: '3+ yrs' },
+      { name: 'Python', icon: 'fab fa-python', level: 'advanced', years: '7+ yrs' },
+      { name: 'Java', icon: 'fab fa-java', level: 'advanced', years: '6+ yrs' },
+      { name: 'MySQL', icon: 'fas fa-database', level: 'expert', years: '3+ yrs' },
+      { name: 'REST APIs', icon: 'fas fa-plug', level: 'expert', years: '3+ yrs' },
+    ]
+  },
+  {
+    title: 'Frontend',
+    color: 'from-blue-500 to-cyan-600',
+    skills: [
+      { name: 'JavaScript', icon: 'fab fa-js', level: 'advanced', years: '6+ yrs' },
+      { name: 'HTML/CSS', icon: 'fab fa-html5', level: 'advanced', years: '6+ yrs' },
+      { name: 'Tailwind CSS', icon: 'fas fa-paint-brush', level: 'proficient', years: '2+ yrs' },
+    ]
+  },
+  {
+    title: 'DevOps & Tools',
+    color: 'from-orange-500 to-red-600',
+    skills: [
+      { name: 'AWS EC2/S3', icon: 'fab fa-aws', level: 'expert', years: '3+ yrs' },
+      { name: 'Linux', icon: 'fab fa-linux', level: 'advanced', years: '4+ yrs' },
+      { name: 'Git', icon: 'fab fa-git-alt', level: 'advanced', years: '6+ yrs' },
+      { name: 'Vim', icon: 'fas fa-terminal', level: 'advanced', years: '4+ yrs' },
+    ]
+  },
+];
+
+const levelColors = {
+  expert: 'bg-primary-500',
+  advanced: 'bg-blue-500',
+  proficient: 'bg-surface-500',
+};
+---
+
+<section id="skills" class="py-24 bg-surface-800/30">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="inline-block px-4 py-1 rounded-full bg-primary-500/10 text-primary-400 text-sm font-medium mb-4">
+        Technical Skills
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-bold text-surface-100">
+        Languages & Technologies
+      </h2>
+      <p class="mt-4 text-surface-400 max-w-2xl mx-auto">
+        A comprehensive toolkit built over years of professional development and personal projects.
+      </p>
+    </div>
+
+    <!-- Skill Categories -->
+    <div class="space-y-12">
+      {skillCategories.map((category, catIndex) => (
+        <div class="animate-on-scroll" style={`animation-delay: ${catIndex * 0.1}s;`}>
+          <!-- Category Header -->
+          <div class="flex items-center mb-6">
+            <div class={`w-1 h-8 rounded-full bg-gradient-to-b ${category.color} mr-4`}></div>
+            <h3 class="text-xl font-bold text-surface-100">{category.title}</h3>
+          </div>
+
+          <!-- Skills Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {category.skills.map((skill, skillIndex) => (
+              <div 
+                class="group relative p-4 rounded-xl bg-surface-800 border border-surface-700 hover:border-primary-500/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary-500/10"
+                style={`animation-delay: ${(catIndex * 0.1) + (skillIndex * 0.05)}s;`}
+              >
+                <!-- Skill Icon -->
+                <div class="text-center">
+                  <i class={`${skill.icon} text-3xl text-surface-400 group-hover:text-primary-400 transition-colors mb-3`}></i>
+                  <div class="font-medium text-surface-200 group-hover:text-white transition-colors">
+                    {skill.name}
+                  </div>
+                  <div class="text-xs text-surface-500 mt-1">
+                    {skill.years}
+                  </div>
+                </div>
+
+                <!-- Level Indicator -->
+                <div class="absolute top-2 right-2">
+                  <div class={`w-2 h-2 rounded-full ${levelColors[skill.level]}`} title={skill.level}></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Legend -->
+    <div class="flex items-center justify-center space-x-6 mt-12 text-sm text-surface-400">
+      <div class="flex items-center space-x-2">
+        <div class="w-2 h-2 rounded-full bg-primary-500"></div>
+        <span>Expert</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+        <span>Advanced</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <div class="w-2 h-2 rounded-full bg-surface-500"></div>
+        <span>Proficient</span>
+      </div>
+    </div>
+  </div>
+</section>
