@@ -1,7 +1,5 @@
 # Brendon Earl - Personal Website
 
-A modern, fast personal CV/portfolio site built with **Astro** and **Tailwind CSS**.
-
 ## Quick Start
 
 ```bash
@@ -22,8 +20,6 @@ npm run preview
 ```
 
 Edit `tailwind.config.mjs` to customize the color palette:
-- `primary` - accent color (currently green)
-- `surface` - background grays
 
 ## Tech Stack
 
